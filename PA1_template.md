@@ -35,7 +35,7 @@
     #create histogram of number of steps taken each day
     hist(x = dayTotal$steps, col="blue", main="Histogram of Total Steps Taken Each Day", xlab="Steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](figure/unnamed-chunk-2-1.png)
 
     #calculate and report the mean and median of the total number of steps taken per day, rounding down to nearest step
     stepMean <- as.integer(mean(dayTotal$steps))
@@ -58,7 +58,7 @@
 
     plot(x=min5mean$interval,y=min5mean$steps, type="l",main="Average Number of Steps by 5-Minute Interval", xlab="5-Minute Interval",ylab="Average Number of Steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](figure/unnamed-chunk-4-1.png)
 
 1.  Which 5-minute interval, on average across all the days in the
     dataset, contains the maximum number of steps?
@@ -107,7 +107,7 @@ The total number of missing values in the dataset is 2304
       summarize_each(funs(sum(., na.rm = TRUE))) -> newDayTotal
     hist(x = newDayTotal$steps, col="blue", main="Histogram of Total Steps Taken Each Day", xlab="Steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](figure/unnamed-chunk-8-1.png)
 
     newstepMean <- as.integer(mean(newDayTotal$steps))
     newstepMedian <- as.integer(median(newDayTotal$steps))
@@ -139,4 +139,4 @@ median are now equal.
 
     xyplot(newData$steps~newData$interval|newData$dayType,type="l",layout=c(1,2),xlab="Interval",ylab="Number of Steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](figure/unnamed-chunk-10-1.png)
